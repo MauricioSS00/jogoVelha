@@ -27,53 +27,54 @@
   </div>
 
   <div *ngIf="esconder == true">
-    <h2>Vez do {{playerAtual}}</h2>
-    <h2>Jogada Nº {{numeroJogada}}</h2>
+    <h2>Dados da Jogada:</h2>
+    <h3>Vez do {{playerAtual}}</h3>
+    <h3>Jogada Nº {{numeroJogada}}</h3>
   </div>
 
   <ion-grid *ngIf="esconder == true" fixed>
     <ion-row>
-      <ion-col size="1" (click)="defineCaracterRodada();setaValor(1);definirPlayerJogada();definirNumeroJogada();testaResultado()">
+      <ion-col size="1" (click)="verificaSetado(1)">
         <div>
           {{caracterGrid1}}
         </div>
       </ion-col>
-      <ion-col size="1" (click)="defineCaracterRodada();setaValor(2);definirPlayerJogada();definirNumeroJogada();testaResultado()">
+      <ion-col size="1" (click)="verificaSetado(2)">
         <div>
           {{caracterGrid2}}
         </div>
       </ion-col>
-      <ion-col size="1" (click)="defineCaracterRodada();setaValor(3);definirPlayerJogada();definirNumeroJogada();testaResultado()">
+      <ion-col size="1" (click)="verificaSetado(3)">
         <div>
           {{caracterGrid3}}
         </div>
       </ion-col>
-      <ion-col size="1" (click)="defineCaracterRodada();setaValor(4);definirPlayerJogada();definirNumeroJogada();testaResultado()">
+      <ion-col size="1" (click)="verificaSetado(4)">
         <div>
           {{caracterGrid4}}
         </div>
       </ion-col>
-      <ion-col size="1" (click)="defineCaracterRodada();setaValor(5);definirPlayerJogada();definirNumeroJogada();testaResultado()">
+      <ion-col size="1" (click)="verificaSetado(5)">
         <div>
           {{caracterGrid5}}
         </div>
       </ion-col>
-      <ion-col size="1" (click)="defineCaracterRodada();setaValor(6);definirPlayerJogada();definirNumeroJogada();testaResultado()">
+      <ion-col size="1" (click)="verificaSetado(6)">
         <div>
           {{caracterGrid6}}
         </div>
       </ion-col>
-      <ion-col size="1" (click)="defineCaracterRodada();setaValor(7);definirPlayerJogada();definirNumeroJogada();testaResultado()">
+      <ion-col size="1" (click)="verificaSetado(7)">
         <div>
           {{caracterGrid7}}
         </div>
       </ion-col>
-      <ion-col size="1" (click)="defineCaracterRodada();setaValor(8);definirPlayerJogada();definirNumeroJogada();testaResultado()">
+      <ion-col size="1" (click)="verificaSetado(8)">
         <div>
           {{caracterGrid8}}
         </div>
       </ion-col>
-      <ion-col size="1" (click)="defineCaracterRodada();setaValor(9);definirPlayerJogada();definirNumeroJogada();testaResultado()">
+      <ion-col size="1" (click)="verificaSetado(9)">
         <div>
           {{caracterGrid9}}
         </div>

@@ -1,5 +1,7 @@
 {
   "name": "jogoVelha",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
