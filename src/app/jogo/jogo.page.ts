@@ -16,7 +16,7 @@ export class JogoPage implements OnInit {
   restanteDivisao: number;
   caracterPlayerRodada: string;
   gridClicado: number;
-  playerVencedor: string;
+  playerVencedor = "";
   caracterGrid1 = "";
   caracterGrid2 = "";
   caracterGrid3 = "";
@@ -78,42 +78,30 @@ export class JogoPage implements OnInit {
   }
 
   testaResultado() {
-    if (this.numeroJogada >= 9) {
-      this.deuVelha();
-    } else {
-      if (this.caracterGrid1 != "" && this.caracterGrid2 != "" && this.caracterGrid3 != "" && this.caracterGrid1 == this.caracterGrid2 && this.caracterGrid1 == this.caracterGrid3 && this.caracterGrid2 == this.caracterGrid3) {
-        console.log("Ganhou linha 1");
-        this.playerVencedor = this.playerAtual;
-        this.vencedor();
-      } else if (this.caracterGrid4 != "" && this.caracterGrid5 != "" && this.caracterGrid6 != "" && this.caracterGrid4 == this.caracterGrid5 && this.caracterGrid4 == this.caracterGrid6 && this.caracterGrid5 == this.caracterGrid6) {
-        console.log("Ganhou linha 2");
-        this.playerVencedor = this.playerAtual;
-        this.vencedor();
-      } else if (this.caracterGrid7 != "" && this.caracterGrid8 != "" && this.caracterGrid9 != "" && this.caracterGrid7 == this.caracterGrid8 && this.caracterGrid7 == this.caracterGrid9 && this.caracterGrid8 == this.caracterGrid9) {
-        console.log("Ganhou linha 3");
-        this.playerVencedor = this.playerAtual;
-        this.vencedor();
-      } else if (this.caracterGrid1 != "" && this.caracterGrid4 != "" && this.caracterGrid7 != "" && this.caracterGrid1 == this.caracterGrid4 && this.caracterGrid1 == this.caracterGrid7 && this.caracterGrid4 == this.caracterGrid7) {
-        console.log("Ganhou coluna 1");
-        this.playerVencedor = this.playerAtual;
-        this.vencedor();
-      } else if (this.caracterGrid2 != "" && this.caracterGrid5 != "" && this.caracterGrid8 != "" && this.caracterGrid2 == this.caracterGrid5 && this.caracterGrid2 == this.caracterGrid8 && this.caracterGrid5 == this.caracterGrid8) {
-        console.log("Ganhou coluna 2");
-        this.playerVencedor = this.playerAtual;
-        this.vencedor();
-      } else if (this.caracterGrid3 != "" && this.caracterGrid6 != "" && this.caracterGrid9 != "" && this.caracterGrid3 == this.caracterGrid6 && this.caracterGrid3 == this.caracterGrid9 && this.caracterGrid6 == this.caracterGrid9) {
-        console.log("Ganhou coluna 3");
-        this.playerVencedor = this.playerAtual;
-        this.vencedor();
-      } else if (this.caracterGrid1 != "" && this.caracterGrid5 != "" && this.caracterGrid9 != "" && this.caracterGrid1 == this.caracterGrid5 && this.caracterGrid1 == this.caracterGrid9 && this.caracterGrid5 == this.caracterGrid9) {
-        console.log("Ganhou Vertical 1");
-        this.playerVencedor = this.playerAtual;
-        this.vencedor();
-      } else if (this.caracterGrid3 != "" && this.caracterGrid5 != "" && this.caracterGrid7 != "" && this.caracterGrid3 == this.caracterGrid5 && this.caracterGrid3 == this.caracterGrid7 && this.caracterGrid5 == this.caracterGrid7) {
-        console.log("Ganhou Vertical 2");
-        this.playerVencedor = this.playerAtual;
-        this.vencedor();
-      }
+    if (this.caracterGrid1 != "" && this.caracterGrid2 != "" && this.caracterGrid3 != "" && this.caracterGrid1 == this.caracterGrid2 && this.caracterGrid1 == this.caracterGrid3 && this.caracterGrid2 == this.caracterGrid3) {
+      console.log("Ganhou linha 1");
+      this.playerVencedor = this.playerAtual;
+    } else if (this.caracterGrid4 != "" && this.caracterGrid5 != "" && this.caracterGrid6 != "" && this.caracterGrid4 == this.caracterGrid5 && this.caracterGrid4 == this.caracterGrid6 && this.caracterGrid5 == this.caracterGrid6) {
+      console.log("Ganhou linha 2");
+      this.playerVencedor = this.playerAtual;
+    } else if (this.caracterGrid7 != "" && this.caracterGrid8 != "" && this.caracterGrid9 != "" && this.caracterGrid7 == this.caracterGrid8 && this.caracterGrid7 == this.caracterGrid9 && this.caracterGrid8 == this.caracterGrid9) {
+      console.log("Ganhou linha 3");
+      this.playerVencedor = this.playerAtual;
+    } else if (this.caracterGrid1 != "" && this.caracterGrid4 != "" && this.caracterGrid7 != "" && this.caracterGrid1 == this.caracterGrid4 && this.caracterGrid1 == this.caracterGrid7 && this.caracterGrid4 == this.caracterGrid7) {
+      console.log("Ganhou coluna 1");
+      this.playerVencedor = this.playerAtual;
+    } else if (this.caracterGrid2 != "" && this.caracterGrid5 != "" && this.caracterGrid8 != "" && this.caracterGrid2 == this.caracterGrid5 && this.caracterGrid2 == this.caracterGrid8 && this.caracterGrid5 == this.caracterGrid8) {
+      console.log("Ganhou coluna 2");
+      this.playerVencedor = this.playerAtual;
+    } else if (this.caracterGrid3 != "" && this.caracterGrid6 != "" && this.caracterGrid9 != "" && this.caracterGrid3 == this.caracterGrid6 && this.caracterGrid3 == this.caracterGrid9 && this.caracterGrid6 == this.caracterGrid9) {
+      console.log("Ganhou coluna 3");
+      this.playerVencedor = this.playerAtual;
+    } else if (this.caracterGrid1 != "" && this.caracterGrid5 != "" && this.caracterGrid9 != "" && this.caracterGrid1 == this.caracterGrid5 && this.caracterGrid1 == this.caracterGrid9 && this.caracterGrid5 == this.caracterGrid9) {
+      console.log("Ganhou Vertical 1");
+      this.playerVencedor = this.playerAtual;
+    } else if (this.caracterGrid3 != "" && this.caracterGrid5 != "" && this.caracterGrid7 != "" && this.caracterGrid3 == this.caracterGrid5 && this.caracterGrid3 == this.caracterGrid7 && this.caracterGrid5 == this.caracterGrid7) {
+      console.log("Ganhou Vertical 2");
+      this.playerVencedor = this.playerAtual;
     }
   }
 
@@ -164,6 +152,7 @@ export class JogoPage implements OnInit {
 
   encerrarPartida() {
     this.playerAtual = "Player 1";
+    this.playerVencedor = "";
     this.numeroJogada = 1;
     this.caracterGrid1 = "";
     this.caracterGrid2 = "";
@@ -194,7 +183,7 @@ export class JogoPage implements OnInit {
     this.defineCaracterRodada();
     this.setaValor(gridClicado);
     this.definirNumeroJogada();
-    this.testaResultado();
+    this.exibeResultado();
     this.definirPlayerJogada();
   }
 
@@ -254,6 +243,15 @@ export class JogoPage implements OnInit {
       } else {
         this.jogar(gridClicado);
       }
+    }
+  }
+
+  exibeResultado(){
+    this.testaResultado();
+    if(this.playerVencedor == "" && this.numeroJogada >= 10){
+      this.deuVelha();
+    } else if(this.playerVencedor != ""){
+      this.vencedor();
     }
   }
 }

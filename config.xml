@@ -2,7 +2,7 @@
 <widget id="com.jogodavelha.mauapps" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Jogo da Velha</name>
     <description>Joga da Velha em versão Inicial.</description>
-    <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <author email="maurcioss83@gmail.com" href="">Maurício</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

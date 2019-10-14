@@ -13,7 +13,7 @@
 
       <ion-item>
         <ion-label>X</ion-label>
-        <ion-radio value="X"></ion-radio>
+        <ion-radio value="X" checked="X"></ion-radio>
       </ion-item>
 
       <ion-item>
@@ -28,55 +28,59 @@
 
   <div *ngIf="esconder == true">
     <h2>Dados da Jogada:</h2>
-    <h3>Vez do {{playerAtual}}</h3>
-    <h3>Jogada Nº {{numeroJogada}}</h3>
+    <h4>Vez do {{playerAtual}}</h4>
+    <h4>Jogada Nº {{numeroJogada}}</h4>
   </div>
 
   <ion-grid *ngIf="esconder == true" fixed>
     <ion-row>
-      <ion-col size="1" (click)="verificaSetado(1)">
-        <div>
-          {{caracterGrid1}}
+      <ion-col (click)="verificaSetado(1)">
+        <div class="ion-text-center">
+          <h3>{{caracterGrid1}}</h3>
         </div>
       </ion-col>
-      <ion-col size="1" (click)="verificaSetado(2)">
-        <div>
-          {{caracterGrid2}}
+      <ion-col (click)="verificaSetado(2)">
+        <div class="ion-text-center">
+          <h3>{{caracterGrid2}}</h3>
         </div>
       </ion-col>
-      <ion-col size="1" (click)="verificaSetado(3)">
-        <div>
-          {{caracterGrid3}}
+      <ion-col (click)="verificaSetado(3)">
+        <div class="ion-text-center">
+          <h3>{{caracterGrid3}}</h3>
         </div>
       </ion-col>
-      <ion-col size="1" (click)="verificaSetado(4)">
-        <div>
-          {{caracterGrid4}}
+    </ion-row>
+    <ion-row>
+      <ion-col (click)="verificaSetado(4)">
+        <div class="ion-text-center">
+          <h3>{{caracterGrid4}}</h3>
         </div>
       </ion-col>
-      <ion-col size="1" (click)="verificaSetado(5)">
-        <div>
-          {{caracterGrid5}}
+      <ion-col (click)="verificaSetado(5)">
+        <div class="ion-text-center">
+          <h3>{{caracterGrid5}}</h3>
         </div>
       </ion-col>
-      <ion-col size="1" (click)="verificaSetado(6)">
-        <div>
-          {{caracterGrid6}}
+      <ion-col (click)="verificaSetado(6)">
+        <div class="ion-text-center">
+          <h3>{{caracterGrid6}}</h3>
         </div>
       </ion-col>
-      <ion-col size="1" (click)="verificaSetado(7)">
-        <div>
-          {{caracterGrid7}}
+    </ion-row>
+    <ion-row>
+      <ion-col (click)="verificaSetado(7)">
+        <div class="ion-text-center">
+          <h3>{{caracterGrid7}}</h3>
         </div>
       </ion-col>
-      <ion-col size="1" (click)="verificaSetado(8)">
-        <div>
-          {{caracterGrid8}}
+      <ion-col (click)="verificaSetado(8)">
+        <div class="ion-text-center">
+          <h3>{{caracterGrid8}}</h3>
         </div>
       </ion-col>
-      <ion-col size="1" (click)="verificaSetado(9)">
-        <div>
-          {{caracterGrid9}}
+      <ion-col (click)="verificaSetado(9)">
+        <div class="ion-text-center">
+          <h3>{{caracterGrid9}}</h3>
         </div>
       </ion-col>
     </ion-row>
