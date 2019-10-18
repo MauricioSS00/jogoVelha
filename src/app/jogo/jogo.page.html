@@ -6,83 +6,101 @@
 
 <ion-content>
   <ion-list>
-    <ion-radio-group *ngIf="esconder != true" [(ngModel)]="player1">
+    <ion-radio-group *ngIf="!esconder" [(ngModel)]="player1">
       <ion-list-header>
         <h2>Selecione qual a opção desejada:</h2>
       </ion-list-header>
-
       <ion-item>
         <ion-label>X</ion-label>
-        <ion-radio value="X" checked="X"></ion-radio>
+        <ion-radio value="X" checked></ion-radio>
       </ion-item>
-
       <ion-item>
         <ion-label>0</ion-label>
         <ion-radio value="0"></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>
-  <div *ngIf="esconder != true">
-    <ion-button (click)="definirCaracter(player1); esconder = true" color="success">Jogar</ion-button>
+  <div *ngIf="!esconder">
+    <ion-button (click)="definirCaracter(player1);" color="success">Jogar</ion-button>
   </div>
 
-  <div *ngIf="esconder == true">
-    <h2>Dados da Jogada:</h2>
-    <h4>Vez do {{playerAtual}}</h4>
-    <h4>Jogada Nº {{numeroJogada}}</h4>
-  </div>
-
-  <ion-grid *ngIf="esconder == true" fixed>
+  <div *ngIf="esconder">
+    <h2><strong>Dados da Jogada:</strong></h2>
     <ion-row>
-      <ion-col (click)="verificaSetado(1)">
+      <ion-col>
+        <h4>Vez do {{playerAtual}}</h4>
+        <h4>Jogada Nº {{numeroJogada}}</h4>
+      </ion-col>
+      <ion-col>
+        <h4>Player 1: {{player1}}</h4>
+        <h4>Player 2: {{player2}}</h4>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-grid class="tabela" *ngIf="esconder" fixed>
+    <ion-row>
+      <ion-col size="1" (click)="verificaSetado(1)">
         <div class="ion-text-center">
-          <h3>{{caracterGrid1}}</h3>
+          <ion-img *ngIf="caracterGrid1 == 'X'" src="assets/img/X.png"></ion-img>
+          <ion-img *ngIf="caracterGrid1 == '0'" src="assets/img/0.png"></ion-img>
         </div>
       </ion-col>
-      <ion-col (click)="verificaSetado(2)">
+      <ion-col size="1" (click)="verificaSetado(2)">
         <div class="ion-text-center">
-          <h3>{{caracterGrid2}}</h3>
+          <ion-img *ngIf="caracterGrid2 == 'X'" src="assets/img/X.png"></ion-img>
+          <ion-img *ngIf="caracterGrid2 == '0'" src="assets/img/0.png"></ion-img>
         </div>
       </ion-col>
-      <ion-col (click)="verificaSetado(3)">
+      <ion-col size="1" (click)="verificaSetado(3)">
         <div class="ion-text-center">
-          <h3>{{caracterGrid3}}</h3>
+          <ion-img *ngIf="caracterGrid3 == 'X'" src="assets/img/X.png"></ion-img>
+          <ion-img *ngIf="caracterGrid3 == '0'" src="assets/img/0.png"></ion-img>
         </div>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col (click)="verificaSetado(4)">
+      <ion-col size="1" (click)="verificaSetado(4)">
         <div class="ion-text-center">
-          <h3>{{caracterGrid4}}</h3>
+          <ion-img *ngIf="caracterGrid4 == 'X'" src="assets/img/X.png"></ion-img>
+          <ion-img *ngIf="caracterGrid4 == '0'" src="assets/img/0.png"></ion-img>
         </div>
       </ion-col>
-      <ion-col (click)="verificaSetado(5)">
+      <ion-col size="1" (click)="verificaSetado(5)">
         <div class="ion-text-center">
-          <h3>{{caracterGrid5}}</h3>
+          <ion-img *ngIf="caracterGrid5 == 'X'" src="assets/img/X.png"></ion-img>
+          <ion-img *ngIf="caracterGrid5 == '0'" src="assets/img/0.png"></ion-img>
         </div>
       </ion-col>
-      <ion-col (click)="verificaSetado(6)">
+      <ion-col size="1" (click)="verificaSetado(6)">
         <div class="ion-text-center">
-          <h3>{{caracterGrid6}}</h3>
+          <ion-img *ngIf="caracterGrid6 == 'X'" src="assets/img/X.png"></ion-img>
+          <ion-img *ngIf="caracterGrid6 == '0'" src="assets/img/0.png"></ion-img>
         </div>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col (click)="verificaSetado(7)">
+      <ion-col size="1" (click)="verificaSetado(7)">
         <div class="ion-text-center">
-          <h3>{{caracterGrid7}}</h3>
+          <ion-img *ngIf="caracterGrid7 == 'X'" src="assets/img/X.png"></ion-img>
+          <ion-img *ngIf="caracterGrid7 == '0'" src="assets/img/0.png"></ion-img>
         </div>
       </ion-col>
-      <ion-col (click)="verificaSetado(8)">
+      <ion-col size="1" (click)="verificaSetado(8)">
         <div class="ion-text-center">
-          <h3>{{caracterGrid8}}</h3>
+          <ion-img *ngIf="caracterGrid8 == 'X'" src="assets/img/X.png"></ion-img>
+          <ion-img *ngIf="caracterGrid8 == '0'" src="assets/img/0.png"></ion-img>
         </div>
       </ion-col>
-      <ion-col (click)="verificaSetado(9)">
+      <ion-col size="1" (click)="verificaSetado(9)">
         <div class="ion-text-center">
-          <h3>{{caracterGrid9}}</h3>
+          <ion-img *ngIf="caracterGrid9 == 'X'" src="assets/img/X.png"></ion-img>
+          <ion-img *ngIf="caracterGrid9 == '0'" src="assets/img/0.png"></ion-img>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <div *ngIf="esconder">
+    <ion-button (click)="encerrarPartida();" color="success">Jogar Novamente</ion-button>
+  </div>
 </ion-content>

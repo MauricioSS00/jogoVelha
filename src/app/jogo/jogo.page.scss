@@ -1,19 +1,23 @@
-ion-col {
-  --ion-grid-columns: 3;
-  background: cadetblue;
-  text-align: center;
-  border: 1pt solid black;
-}
+.tabela {
+  ion-col {
+    --ion-grid-columns: 3;
+    background: cadetblue;
+    text-align: center;
+    border: 1pt solid black;
+  }
 
-ion-grid {
-  --ion-grid-padding: 20px;
-  --ion-grid-column-padding: 50px;
-}
+  ion-img {
+    min-height: 50px;
+    max-height: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    margin: 15px;
+  }
 
-div {
-  padding-left: 20px;
-}
-
-.grid-of-icons {
-  --ion-grid-column-padding: 30px;
+  .ion-text-center {
+    min-height: 80px;
+    max-height: 80px;
+    min-width: 80px;
+    max-width: 80px;
+  }
 }

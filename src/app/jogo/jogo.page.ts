@@ -8,12 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./jogo.page.scss'],
 })
 export class JogoPage implements OnInit {
-  player1: string;
+  player1 = "";
   player2: string;
   esconder = false;
   playerAtual = "Player 1";
   numeroJogada = 1;
-  restanteDivisao: number;
   caracterPlayerRodada: string;
   gridClicado: number;
   playerVencedor = "";
@@ -106,10 +105,14 @@ export class JogoPage implements OnInit {
   }
 
   definirCaracter(player1) {
-    if (player1 === "X") {
+    if (player1 == null) {
+      this.selecioneCaracter();
+    } else if (player1 === "X") {
       this.player2 = "0";
+      this.esconder = true;
     } else {
       this.player2 = "X";
+      this.esconder = true;
     }
   }
 
@@ -130,6 +133,21 @@ export class JogoPage implements OnInit {
     await alert.present();
     this.router.navigate(['home']);
     this.encerrarPartida();
+  }
+
+  async selecioneCaracter() {
+    const alert = await this.alertController.create({
+      header: 'Atenção!',
+      message: 'Selecione uma opção!',
+      buttons: [{
+        text: 'Ok',
+        handler: () => {
+        }
+      }
+      ]
+    }
+    );
+    await alert.present();
   }
 
   async deuVelha() {
@@ -154,6 +172,7 @@ export class JogoPage implements OnInit {
     this.playerAtual = "Player 1";
     this.playerVencedor = "";
     this.numeroJogada = 1;
+    this.esconder = false;
     this.caracterGrid1 = "";
     this.caracterGrid2 = "";
     this.caracterGrid3 = "";
@@ -177,6 +196,7 @@ export class JogoPage implements OnInit {
       ]
     });
     await alert.present();
+    this.exibeResultado();
   }
 
   jogar(gridClicado) {
@@ -246,11 +266,11 @@ export class JogoPage implements OnInit {
     }
   }
 
-  exibeResultado(){
+  exibeResultado() {
     this.testaResultado();
-    if(this.playerVencedor == "" && this.numeroJogada >= 10){
+    if (this.playerVencedor == "" && this.numeroJogada >= 10) {
       this.deuVelha();
-    } else if(this.playerVencedor != ""){
+    } else if (this.playerVencedor != "") {
       this.vencedor();
     }
   }
